@@ -34,9 +34,11 @@
             this.gboxImport = new System.Windows.Forms.GroupBox();
             this.gboxSave = new System.Windows.Forms.GroupBox();
             this.cboxEncrypt = new System.Windows.Forms.CheckBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.txtSave = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblFiletext = new System.Windows.Forms.Label();
             this.gboxImport.SuspendLayout();
             this.gboxSave.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +87,7 @@
             this.gboxSave.Controls.Add(this.cboxEncrypt);
             this.gboxSave.Controls.Add(this.txtSave);
             this.gboxSave.Controls.Add(this.btnSave);
-            this.gboxSave.Location = new System.Drawing.Point(35, 260);
+            this.gboxSave.Location = new System.Drawing.Point(38, 579);
             this.gboxSave.Name = "gboxSave";
             this.gboxSave.Size = new System.Drawing.Size(806, 164);
             this.gboxSave.TabIndex = 4;
@@ -102,6 +104,13 @@
             this.cboxEncrypt.Text = "Encrypt onsave";
             this.cboxEncrypt.UseVisualStyleBackColor = true;
             // 
+            // txtSave
+            // 
+            this.txtSave.Location = new System.Drawing.Point(39, 68);
+            this.txtSave.Name = "txtSave";
+            this.txtSave.Size = new System.Drawing.Size(324, 31);
+            this.txtSave.TabIndex = 0;
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(416, 68);
@@ -112,16 +121,9 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtSave
-            // 
-            this.txtSave.Location = new System.Drawing.Point(39, 68);
-            this.txtSave.Name = "txtSave";
-            this.txtSave.Size = new System.Drawing.Size(324, 31);
-            this.txtSave.TabIndex = 0;
-            // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(350, 450);
+            this.btnExit.Location = new System.Drawing.Point(353, 769);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(207, 99);
             this.btnExit.TabIndex = 5;
@@ -129,11 +131,30 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(89, 216);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "File Text";
+            // 
+            // lblFiletext
+            // 
+            this.lblFiletext.AutoSize = true;
+            this.lblFiletext.Location = new System.Drawing.Point(94, 261);
+            this.lblFiletext.Name = "lblFiletext";
+            this.lblFiletext.Size = new System.Drawing.Size(0, 25);
+            this.lblFiletext.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 576);
+            this.ClientSize = new System.Drawing.Size(876, 947);
+            this.Controls.Add(this.lblFiletext);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.gboxImport);
             this.Controls.Add(this.gboxSave);
@@ -145,6 +166,7 @@
             this.gboxSave.ResumeLayout(false);
             this.gboxSave.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -159,6 +181,8 @@
         private System.Windows.Forms.TextBox txtSave;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblFiletext;
     }
 }
 

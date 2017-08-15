@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.AccessControl;
+
 
 namespace TeamFileIO
 {
@@ -27,36 +29,37 @@ namespace TeamFileIO
         {
             //choose file
             ImportFile();
-            
-            //encrypt
+
         }
 
         private void ImportFile()
         {
             var importFile = new OpenFileDialog();
             importFile.ShowDialog();
-            MessageBox.Show("File successfully imported!");
-            //todo add if else for success or failure of import
-        }
 
-        private void EncryptOrDecryptFile()
-        {
+            //show file name in text box
+            txtImport.Text = importFile.FileName;
+
             if (cboxDecrypt.Checked)
             {
-                //decrypt file
+                File.Decrypt(importFile.FileName);
             }
 
-            if (cboxEncrypt.Checked)
-            {
-                //encrypt file
-            }
-            
+            //display file
+            //MessageBox.Show($"{file}");
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             var saveFile = new SaveFileDialog();
             saveFile.ShowDialog();
+            if (cboxEncrypt.Checked)
+            {
+                File.Encrypt(saveFile.FileName);
+            }
+            txtSave.Text = saveFile.FileName;
         }
 
         private void Form1_Load(object sender, EventArgs e)
