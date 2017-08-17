@@ -34,11 +34,11 @@
             this.gboxImport = new System.Windows.Forms.GroupBox();
             this.gboxSave = new System.Windows.Forms.GroupBox();
             this.cboxEncrypt = new System.Windows.Forms.CheckBox();
-            this.txtSave = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFiletext = new System.Windows.Forms.Label();
+            this.txtReadFile = new System.Windows.Forms.TextBox();
             this.gboxImport.SuspendLayout();
             this.gboxSave.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,6 @@
             // gboxSave
             // 
             this.gboxSave.Controls.Add(this.cboxEncrypt);
-            this.gboxSave.Controls.Add(this.txtSave);
             this.gboxSave.Controls.Add(this.btnSave);
             this.gboxSave.Location = new System.Drawing.Point(38, 579);
             this.gboxSave.Name = "gboxSave";
@@ -97,23 +96,16 @@
             // cboxEncrypt
             // 
             this.cboxEncrypt.AutoSize = true;
-            this.cboxEncrypt.Location = new System.Drawing.Point(598, 79);
+            this.cboxEncrypt.Location = new System.Drawing.Point(413, 79);
             this.cboxEncrypt.Name = "cboxEncrypt";
-            this.cboxEncrypt.Size = new System.Drawing.Size(193, 29);
+            this.cboxEncrypt.Size = new System.Drawing.Size(199, 29);
             this.cboxEncrypt.TabIndex = 2;
-            this.cboxEncrypt.Text = "Encrypt onsave";
+            this.cboxEncrypt.Text = "Encrypt on save";
             this.cboxEncrypt.UseVisualStyleBackColor = true;
-            // 
-            // txtSave
-            // 
-            this.txtSave.Location = new System.Drawing.Point(39, 68);
-            this.txtSave.Name = "txtSave";
-            this.txtSave.Size = new System.Drawing.Size(324, 31);
-            this.txtSave.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(416, 68);
+            this.btnSave.Location = new System.Drawing.Point(175, 59);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(149, 49);
             this.btnSave.TabIndex = 1;
@@ -148,11 +140,20 @@
             this.lblFiletext.Size = new System.Drawing.Size(0, 25);
             this.lblFiletext.TabIndex = 7;
             // 
+            // txtReadFile
+            // 
+            this.txtReadFile.Location = new System.Drawing.Point(94, 270);
+            this.txtReadFile.Multiline = true;
+            this.txtReadFile.Name = "txtReadFile";
+            this.txtReadFile.Size = new System.Drawing.Size(723, 278);
+            this.txtReadFile.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(876, 947);
+            this.Controls.Add(this.txtReadFile);
             this.Controls.Add(this.lblFiletext);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
@@ -178,11 +179,11 @@
         private System.Windows.Forms.GroupBox gboxImport;
         private System.Windows.Forms.GroupBox gboxSave;
         private System.Windows.Forms.CheckBox cboxEncrypt;
-        private System.Windows.Forms.TextBox txtSave;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFiletext;
+        private System.Windows.Forms.TextBox txtReadFile;
     }
 }
 
