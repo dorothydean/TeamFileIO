@@ -20,60 +20,20 @@ namespace TeamFileIO
             InitializeComponent();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         private void btnImport_Click(object sender, EventArgs e)
         {
             //choose file
             ImportFile();
-
         }
-
-        private void ImportFile()
-        {
-            var importFile = new OpenFileDialog();
-            importFile.ShowDialog();
-
-            //show file name in text box
-            txtImport.Text = importFile.FileName;
-
-            ReadFile();
-            
-        }
-
-        private void ReadFile()
-        {
-            //display file into text box
-            try
-            {   // Open the text file using a stream reader.
-                using (StreamReader sr = new StreamReader(txtImport.Text))
-                {
-                    // Read the stream to a string, and write the string to the console.
-                    String line = sr.ReadToEnd();
-                    txtReadFile.Text = line;
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("The file could not be read:");
-            }
-        }
-
-        private void WriteFile()
-        {
-
-        }
-
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             var saveFile = new SaveFileDialog();
             saveFile.ShowDialog();
 
-            //pull txtReadFile.text and do something with it
             string fileName = saveFile.FileName;
             string textToAdd = txtReadFile.Text;
             FileStream fs = null;
@@ -90,45 +50,67 @@ namespace TeamFileIO
                 if (fs != null)
                     fs.Dispose();
             }
+        }
 
-            if (cboxEncrypt.Checked)
-            {
-                EncryptFile();
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            DecryptFile();
+        }
+
+        private void btnEncrypt_Click(object sender, EventArgs e)
+        {
+            EncryptFile();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //helper methods
+        private void ImportFile()
+        {
+            var importFile = new OpenFileDialog();
+            importFile.ShowDialog();
+
+            //show file name in text box
+            txtImport.Text = importFile.FileName;
+
+            ReadFile();
+
+        }
+
+        private void ReadFile()
+        {
+            //display file into text box
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader(txtImport.Text))
+                {
+                    String line = sr.ReadToEnd();
+                    txtReadFile.Text = line;
+                }
             }
-            
+            catch (Exception e)
+            {
+                MessageBox.Show("The file could not be read:");
+            }
         }
 
         private void EncryptFile()
         {
-            //convert to ASCII equivalent
             string text = txtReadFile.Text;
-            byte[] bytes = Encoding.ASCII.GetBytes(text);
-            int result = BitConverter.ToInt32(bytes, 0);
-            //display encrypted text in text box
+            byte[] mybyte = System.Text.Encoding.UTF8.GetBytes(text);
+            string returntext = System.Convert.ToBase64String(mybyte);
+            txtReadFile.Text = returntext;
         }
 
         private void DecryptFile()
         {
-            //pull encrypted text from text box
-            //run ascii conversion
-            //display back into text box
-
             string text = txtReadFile.Text;
-            //possible conversion to ints
-            //byte[] bytes2 = BitConverter.GetBytes(); //bool
-            //string s2 = Encoding.ASCII.GetString(bytes);
-
+            byte[] mybyte = System.Convert.FromBase64String(text);
+            string returntext = System.Text.Encoding.UTF8.GetString(mybyte);
+            txtReadFile.Text = returntext;
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //List<String> file = new List<string>();
-            //file.Add("string Hey there joe!");
-            //string path = @"C:test";
-            //File.AppendAllLines(path, file);
-            
-        }
-
-
     }
 }

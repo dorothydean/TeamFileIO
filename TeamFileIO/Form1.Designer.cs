@@ -30,15 +30,15 @@
         {
             this.txtImport = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
-            this.cboxDecrypt = new System.Windows.Forms.CheckBox();
             this.gboxImport = new System.Windows.Forms.GroupBox();
             this.gboxSave = new System.Windows.Forms.GroupBox();
-            this.cboxEncrypt = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblFiletext = new System.Windows.Forms.Label();
             this.txtReadFile = new System.Windows.Forms.TextBox();
+            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.gboxImport.SuspendLayout();
             this.gboxSave.SuspendLayout();
             this.SuspendLayout();
@@ -60,19 +60,8 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // cboxDecrypt
-            // 
-            this.cboxDecrypt.AutoSize = true;
-            this.cboxDecrypt.Location = new System.Drawing.Point(598, 76);
-            this.cboxDecrypt.Name = "cboxDecrypt";
-            this.cboxDecrypt.Size = new System.Drawing.Size(213, 29);
-            this.cboxDecrypt.TabIndex = 2;
-            this.cboxDecrypt.Text = "Decrypt on import";
-            this.cboxDecrypt.UseVisualStyleBackColor = true;
-            // 
             // gboxImport
             // 
-            this.gboxImport.Controls.Add(this.cboxDecrypt);
             this.gboxImport.Controls.Add(this.btnImport);
             this.gboxImport.Controls.Add(this.txtImport);
             this.gboxImport.Location = new System.Drawing.Point(35, 28);
@@ -84,24 +73,13 @@
             // 
             // gboxSave
             // 
-            this.gboxSave.Controls.Add(this.cboxEncrypt);
             this.gboxSave.Controls.Add(this.btnSave);
-            this.gboxSave.Location = new System.Drawing.Point(38, 579);
+            this.gboxSave.Location = new System.Drawing.Point(36, 632);
             this.gboxSave.Name = "gboxSave";
             this.gboxSave.Size = new System.Drawing.Size(806, 164);
             this.gboxSave.TabIndex = 4;
             this.gboxSave.TabStop = false;
             this.gboxSave.Text = "Save File";
-            // 
-            // cboxEncrypt
-            // 
-            this.cboxEncrypt.AutoSize = true;
-            this.cboxEncrypt.Location = new System.Drawing.Point(413, 79);
-            this.cboxEncrypt.Name = "cboxEncrypt";
-            this.cboxEncrypt.Size = new System.Drawing.Size(199, 29);
-            this.cboxEncrypt.TabIndex = 2;
-            this.cboxEncrypt.Text = "Encrypt on save";
-            this.cboxEncrypt.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -115,7 +93,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(353, 769);
+            this.btnExit.Location = new System.Drawing.Point(351, 822);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(207, 99);
             this.btnExit.TabIndex = 5;
@@ -148,11 +126,33 @@
             this.txtReadFile.Size = new System.Drawing.Size(723, 278);
             this.txtReadFile.TabIndex = 8;
             // 
+            // btnDecrypt
+            // 
+            this.btnDecrypt.Location = new System.Drawing.Point(175, 572);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(146, 54);
+            this.btnDecrypt.TabIndex = 9;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            // 
+            // btnEncrypt
+            // 
+            this.btnEncrypt.Location = new System.Drawing.Point(454, 572);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(146, 54);
+            this.btnEncrypt.TabIndex = 10;
+            this.btnEncrypt.Text = "Encrypt";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 947);
+            this.ClientSize = new System.Drawing.Size(876, 1058);
+            this.Controls.Add(this.btnEncrypt);
+            this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.txtReadFile);
             this.Controls.Add(this.lblFiletext);
             this.Controls.Add(this.label1);
@@ -165,7 +165,6 @@
             this.gboxImport.ResumeLayout(false);
             this.gboxImport.PerformLayout();
             this.gboxSave.ResumeLayout(false);
-            this.gboxSave.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,15 +174,15 @@
 
         private System.Windows.Forms.TextBox txtImport;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.CheckBox cboxDecrypt;
         private System.Windows.Forms.GroupBox gboxImport;
         private System.Windows.Forms.GroupBox gboxSave;
-        private System.Windows.Forms.CheckBox cboxEncrypt;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFiletext;
         private System.Windows.Forms.TextBox txtReadFile;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnEncrypt;
     }
 }
 
