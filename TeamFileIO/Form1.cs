@@ -46,7 +46,7 @@ namespace TeamFileIO
 
         private void ReadFile()
         {
-            //display file into label
+            //display file into text box
             try
             {   // Open the text file using a stream reader.
                 using (StreamReader sr = new StreamReader(txtImport.Text))
@@ -62,6 +62,11 @@ namespace TeamFileIO
             }
         }
 
+        private void WriteFile()
+        {
+
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -69,11 +74,26 @@ namespace TeamFileIO
             saveFile.ShowDialog();
 
             //pull txtReadFile.text and do something with it
+            string fileName = saveFile.FileName;
+            string textToAdd = txtReadFile.Text;
+            FileStream fs = null;
+            try
+            {
+                fs = new FileStream(fileName, FileMode.Create);
+                using (StreamWriter writer = new StreamWriter(fs))
+                {
+                    writer.Write(textToAdd);
+                }
+            }
+            finally
+            {
+                if (fs != null)
+                    fs.Dispose();
+            }
 
             if (cboxEncrypt.Checked)
             {
-               
-
+                EncryptFile();
             }
             
         }
@@ -95,8 +115,8 @@ namespace TeamFileIO
 
             string text = txtReadFile.Text;
             //possible conversion to ints
-            byte[] bytes2 = BitConverter.GetBytes(); //bool
-            string s2 = Encoding.ASCII.GetString(bytes);
+            //byte[] bytes2 = BitConverter.GetBytes(); //bool
+            //string s2 = Encoding.ASCII.GetString(bytes);
 
         }
 
